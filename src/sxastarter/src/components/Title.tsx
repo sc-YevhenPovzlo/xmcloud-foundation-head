@@ -5,10 +5,7 @@ import {
   useSitecoreContext,
   LinkField,
   TextField,
-  DateField,
 } from '@sitecore-jss/sitecore-jss-nextjs';
-
-import { EditFrame } from '@sitecore-jss/sitecore-jss-nextjs';
 
 interface Fields {
   data: {
@@ -30,18 +27,6 @@ interface Fields {
         siteName: string;
       };
       field: {
-        jsonValue: {
-          value: string;
-          editable: string;
-        };
-      };
-      blogDateTime: {
-        jsonValue: {
-          value: string;
-          editable: string;
-        };
-      };
-      blogDate: {
         jsonValue: {
           value: string;
           editable: string;
@@ -73,24 +58,6 @@ const ComponentContent = (props: ComponentContentProps) => {
   );
 };
 
-const getEditFrameProps = (dataSource?: string) => ({
-  dataSource: dataSource ? { itemId: dataSource } : undefined,
-  buttons: editFrameButtons,
-  title: 'Edit date fields',
-  tooltip: 'Edit date fields',
-  cssClass: 'jss-edit-frame',
-  parameters: {},
-});
-
-const editFrameButtons = [
-  {
-    header: 'FieldEditButton',
-    icon: '/~/icon/Office/16x16/pencil.png',
-    fields: ['blogDate', 'blogDateTime'],
-    tooltip: 'Allows you to open field editor for specified fields',
-  },
-];
-
 export const Default = (props: TitleProps): JSX.Element => {
   const datasource = props.fields?.data?.datasource || props.fields?.data?.contextItem;
   const { sitecoreContext } = useSitecoreContext();
@@ -118,15 +85,7 @@ export const Default = (props: TitleProps): JSX.Element => {
     <ComponentContent styles={props.params.styles} id={props.params.RenderingIdentifier}>
       <>
         {sitecoreContext.pageState === 'edit' ? (
-          <>
-            <EditFrame {...getEditFrameProps(sitecoreContext.itemId)}>
-              <Text field={text} />
-              {`  `}
-              <br></br>
-              <DateField field={props.fields.data.contextItem.blogDate.jsonValue} />
-              <DateField field={props.fields.data.contextItem.blogDateTime.jsonValue} />
-            </EditFrame>
-          </>
+          <Text field={text} />
         ) : (
           <Link field={link}>
             <Text field={text} />
