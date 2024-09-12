@@ -19,7 +19,7 @@ const DefaultContainer = (props: ComponentProps): JSX.Element => {
   const { sitecoreContext } = useSitecoreContext();
   const containerStyles = props.params && props.params.Styles ? props.params.Styles : '';
   const styles = `${props.params.GridParameters} ${containerStyles}`.trimEnd();
-  const phKey = `container-${props.params.DynamicPlaceholderId}`;
+  //const phKey = `container-${props.params.DynamicPlaceholderId}`;
   const id = props.params.RenderingIdentifier;
   let backgroundImage = props.params.BackgroundImage as string;
   let backgroundStyle: { [key: string]: string } = {};
@@ -36,7 +36,7 @@ const DefaultContainer = (props: ComponentProps): JSX.Element => {
     <div className={`component container-default ${styles}`} id={id ? id : undefined}>
       <div className="component-content" style={backgroundStyle}>
         <div className="row">
-          <Placeholder name={phKey} rendering={props.rendering} />
+          <Placeholder name="container" rendering={props.rendering} />
         </div>
       </div>
     </div>
