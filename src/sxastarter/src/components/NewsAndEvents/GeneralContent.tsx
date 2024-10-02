@@ -1,27 +1,24 @@
 import React from 'react';
+//import necessary types to render placeholders and fields and define properties of the component
+import {
+  ComponentRendering,
+  ComponentParams,
+  Placeholder,
+  Text,
+  Field,
+} from '@sitecore-jss/sitecore-jss-nextjs';
 
-//// Uncomment inner section
-// import {
-//   Field,
-//   ComponentRendering,
-//   ComponentParams,
-//   Placeholder,
-//   Text,
-// } from '@sitecore-jss/sitecore-jss-nextjs';
+//Define fields that our component will get during rendering. In this component we render only one field named Title
+interface Fields {
+  Title: Field<string>;
+}
+interface ComponentProps {
+  rendering: ComponentRendering & { params: ComponentParams };
+  params: ComponentParams;
+  fields: Fields;
+}
 
-// interface Fields {
-//   Title: Field<string>;
-// }
-
-// interface ComponentProps {
-//   rendering: ComponentRendering & { params: ComponentParams };
-//   params: ComponentParams;
-//   fields: Fields;
-// }
-//// Uncomment inner section
-
-//// Uncomment substring /*props: ComponentProps*/ on the next line by removing / and * symbols: export const Default = (props: ComponentProps): JSX.Element => {
-export const Default = (/*props: ComponentProps*/): JSX.Element => {
+export const Default = (props: ComponentProps): JSX.Element => {
   return (
     <>
       <header className="sc-globalHeader">
@@ -38,12 +35,8 @@ export const Default = (/*props: ComponentProps*/): JSX.Element => {
         <div className="sc-applicationHeader-row1">
           <div className="sc-applicationHeader-content">
             <div className="sc-applicationHeader-title">
-              {/* Comment inner section */}
-              News and Events home page
-              {/* Comment inner section */}
-              {/* Uncomment inner section */}
-              {/* <Text field={props.fields?.Title} /> */}
-              {/* Uncomment inner section */}
+              {/* Define editalbe text field to render Title field */}
+              <Text field={props.fields?.Title} />
             </div>
           </div>
         </div>
@@ -54,31 +47,8 @@ export const Default = (/*props: ComponentProps*/): JSX.Element => {
           <div className="row sc-dialogContent-toolbar-back"></div>
         </div>
       </section>
-
-      {/* Delete inner section */}
-      <section className="sc-applicationContent">
-        <div className="col-md-12 sc-applicationContent-main">
-          <div className="col-md-3">
-            <img src="/img/sitecore-logo.jpg" alt="Home page img" />
-          </div>
-          <div className="col-md-9">
-            <h3
-              style={{
-                color: '#5c5c5c',
-                backgroundColor: '#ffffff',
-                margin: '21px 0px',
-                letterSpacing: '0.3px',
-              }}
-            >
-              We&#39;re glad to see you on the News and Events microsite home page!
-            </h3>
-          </div>
-        </div>
-      </section>
-      {/* Delete inner section */}
-      {/* Uncomment inner section */}
-      {/* <Placeholder name="ContentPlaceholder" rendering={props.rendering} /> */}
-      {/* Uncomment inner section */}
+      {/* Define placeholder to add different components to our pages */}
+      <Placeholder name="ContentPlaceholder" rendering={props.rendering} />
     </>
   );
 };
