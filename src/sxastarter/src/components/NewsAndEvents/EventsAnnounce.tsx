@@ -21,8 +21,12 @@ export const Default = (props: EventAnnouncesProps): JSX.Element => {
             <h3>
               Events Announce:&nbsp;
               {/* Render PageLink link field if it is not empty, otherwhise render Title text field */}
-              {props.fields?.PageLink ? (
-                <Link field={props.fields.PageLink} />
+              {props.fields?.PageLink?.value?.href ? (
+                props.fields?.PageLink?.value?.text ? (
+                  <Link field={props.fields.PageLink} />
+                ) : (
+                  <Link field={props.fields.PageLink}>{props.fields?.Title?.value}</Link>
+                )
               ) : (
                 <Text field={props.fields?.Title} />
               )}
