@@ -47,7 +47,7 @@ export const Default = (props: ComponentProps): JSX.Element => {
           <div className="row sc-dialogContent-toolbar-back"></div>
         </div>
       </section>
-      {/* Define placeholder to add different components to our pages */}
+      {/* Define placeholder to add different components to the current component */}
       <Placeholder name="ContentPlaceholder" rendering={props.rendering} />
     </>
   );

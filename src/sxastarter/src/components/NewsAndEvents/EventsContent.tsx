@@ -18,7 +18,7 @@ type EventProps = {
 export const Default = ({ fields }: EventProps): JSX.Element => {
   return (
     <>
-      <section className="sc-applicationContent">
+      <section className="sc-applicationContent component content">
         <div className="col-md-12 sc-applicationContent-main">
           <div>
             <div className="col-md-3">

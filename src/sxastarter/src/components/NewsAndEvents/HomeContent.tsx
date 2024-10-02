@@ -25,7 +25,7 @@ interface ComponentProps {
 export const Default = (props: ComponentProps): JSX.Element => {
   return (
     <>
-      <section className="sc-applicationContent">
+      <section className="sc-applicationContent component content">
         <div className="col-md-12 sc-applicationContent-main">
           <div className="col-md-3">
             {/* Define editalbe image field to render Image field */}

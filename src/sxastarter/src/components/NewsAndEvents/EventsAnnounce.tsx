@@ -10,23 +10,19 @@ interface Fields {
 }
 type EventAnnouncesProps = {
   fields: Fields;
-  id: string;
 };
 
 export const Default = (props: EventAnnouncesProps): JSX.Element => {
-  const id = props.id;
   return (
-    <section className="sc-applicationContent">
-      <div className="col-md-12 sc-applicationContent-main" id={id ? id : undefined}>
+    <section className="sc-applicationContent component content">
+      <div className="col-md-12 sc-applicationContent-main">
         <div>
           <div className="col-md-9">
-            <h3>Events Announce:</h3>
-          </div>
-          <div className="col-md-9">
             <h3>
+              Events Announce:&nbsp;
               {/* Render PageLink link field if it is not empty, otherwhise render Title text field */}
               {props.fields?.PageLink ? (
-                <Link field={props.fields?.PageLink} />
+                <Link field={props.fields.PageLink} />
               ) : (
                 <Text field={props.fields?.Title} />
               )}
