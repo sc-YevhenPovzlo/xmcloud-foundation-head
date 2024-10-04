@@ -1,12 +1,4 @@
-import {
-  Field,
-  ImageField,
-  Text,
-  Image,
-  LinkField,
-  Link,
-  ComponentParams,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+import { Field, ImageField, Text, Image, LinkField, Link } from '@sitecore-jss/sitecore-jss-nextjs';
 import React from 'react';
 
 type Record = {
@@ -23,7 +15,7 @@ type Fields = {
 };
 
 type RecordsListProps = {
-  params: ComponentParams;
+  params: { [key: string]: string };
   fields: Fields;
 };
 
@@ -32,7 +24,7 @@ export const Default = (props: RecordsListProps): JSX.Element => {
     <div className="articleTitle">
       <h4 className="recordsTitle">Athletics World Records</h4>
       {props.fields?.Records?.map((record, key) => (
-        <div className="recordWrapper" key={key} style={{ backgroundColor: props.params.styles }}>
+        <div className="recordWrapper" key={key} style={{ backgroundColor: props.params['Color'] }}>
           <Link
             className="linkWrapper1 linkWrapper2"
             field={record.fields?.Link}
