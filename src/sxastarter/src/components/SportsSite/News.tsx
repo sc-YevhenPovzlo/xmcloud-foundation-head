@@ -25,7 +25,7 @@ type NewsProps = {
 
 export const Default = ({ fields }: NewsProps): JSX.Element => {
   return (
-    <div className="jHOQrC articleTitle">
+    <div className="jHOQrC articleTitle component content">
       <div className=" dnuFEq sidePanel">
         <h3 className="jkSLwM">
           <Link className="gPdGYK" field={fields?.Link} style={{ letterSpacing: '0.6' }}>

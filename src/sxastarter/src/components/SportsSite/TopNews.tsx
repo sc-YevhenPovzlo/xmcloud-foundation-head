@@ -27,7 +27,7 @@ type NewsProps = {
 export const Default = ({ fields }: NewsProps): JSX.Element => {
   const { sitecoreContext } = useSitecoreContext();
   return (
-    <div className="topNewsWrapper" style={{ wordSpacing: '5' }}>
+    <div className="topNewsWrapper component content" style={{ wordSpacing: '5' }}>
       {sitecoreContext.pageEditing ? (
         <TopNews fields={fields} />
       ) : (

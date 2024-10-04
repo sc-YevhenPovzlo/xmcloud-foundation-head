@@ -20,7 +20,7 @@ type RecordsListProps = {
 
 export const Default = (props: RecordsListProps): JSX.Element => {
   return (
-    <div className="articleTitle">
+    <div className="articleTitle component content">
       <h4 className="recordsTitle">Recommended</h4>
       {props.fields?.Recommended?.map((recommended, key) => (
         <div className="recordWrapper" key={key}>

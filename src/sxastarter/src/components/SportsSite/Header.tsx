@@ -35,7 +35,7 @@ export const Default = (props: HeaderProps): JSX.Element => {
   const datasource = props.fields?.data?.datasource;
 
   return (
-    <nav className="topHeader" data-hook="header">
+    <nav className="topHeader component content" data-hook="header">
       <div className="kkVDHC idiolS csfUtv bdkrEV">
         <div className="sm-hide bPXQyn">
           <Link className="fpwFGm exwrrA" href={datasource.url.path}>
