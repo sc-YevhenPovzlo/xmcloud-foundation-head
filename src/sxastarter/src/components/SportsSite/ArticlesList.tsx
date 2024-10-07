@@ -53,7 +53,7 @@ export const Default = (props: ArticlesListProps): JSX.Element => {
   const { sitecoreContext } = useSitecoreContext();
 
   return (
-    <div className=" sectionWrapper component content" style={{ wordSpacing: 6 }}>
+    <div className=" sectionWrapper" style={{ wordSpacing: 6 }}>
       <p className="sectionWrapper1">{sitecoreContext.route?.name}</p>
       <div>
         {props.fields?.data.datasource?.children?.results.map((article, key) => (

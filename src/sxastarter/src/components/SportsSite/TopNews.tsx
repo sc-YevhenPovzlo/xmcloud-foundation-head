@@ -31,7 +31,7 @@ export const Default = ({ fields }: NewsProps): JSX.Element => {
       {sitecoreContext.pageEditing ? (
         <TopNews fields={fields} />
       ) : (
-        <Link className="linkWrapper2" field={fields.Link} style={{ letterSpacing: '0.6' }}>
+        <Link className="linkWrapper2" field={fields.Link} style={{ textDecoration: 'none' }}>
           <TopNews fields={fields} />
         </Link>
       )}
@@ -44,10 +44,10 @@ const TopNews = ({ fields }: NewsProps): JSX.Element => {
     <div className="topNewsWrapper1 topNewsWrapper2">
       <Image className="jgiabm " style={{ height: '100%' }} field={fields.Image}></Image>
       <div className="dOuWZW dFDZzI">
-        <p className="iGesMc goJKvn recordWrapperTitle1">
+        <p className="iGesMc ekVZNJ ilAWGA recordWrapperTitle1">
           <span>Sports News</span>
         </p>
-        <Text tag="h3" className="gfjGyl ixIYE" field={fields.Title} />
+        <Text tag="h3" className="gfjGyl ixIYE" field={fields.Title} style={{ color: 'White' }} />
         <Text tag="p" className="iGesMc ekVZNJ ilAWGA" field={fields.Intro} />
         <p className="iGesMc gyuNqT jHDesy">
           <DateField

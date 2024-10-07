@@ -9,7 +9,7 @@ type BannerProps = {
 
 export const Default = ({ fields }: BannerProps): JSX.Element => {
   return (
-    <div className="component content">
+    <div>
       <div className="bannerWrapper1 bannerWrapper2">
         <Image className="banner_image" field={fields.Image}></Image>
       </div>

@@ -21,14 +21,14 @@ type RecordsListProps = {
 
 export const Default = (props: RecordsListProps): JSX.Element => {
   return (
-    <div className="articleTitle component content">
+    <div className="articleTitle">
       <h4 className="recordsTitle">Athletics World Records</h4>
       {props.fields?.Records?.map((record, key) => (
         <div className="recordWrapper" key={key} style={{ backgroundColor: props.params['Color'] }}>
           <Link
             className="linkWrapper1 linkWrapper2"
             field={record.fields?.Link}
-            style={{ letterSpacing: '0.6' }}
+            style={{ textDecoration: 'none' }}
           >
             <div className="p2 fPTthd">
               <Text

@@ -12,7 +12,7 @@ interface ComponentProps {
 
 export const Default = (props: ComponentProps): JSX.Element => {
   return (
-    <div className=" sectionWrapper component content">
+    <div className=" sectionWrapper">
       <p className="sectionWrapper1">The Latest</p>
       <div>
         <Placeholder name="News" rendering={props.rendering} />

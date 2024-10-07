@@ -12,7 +12,7 @@ type NewsProps = {
 export const Default = ({ fields }: NewsProps): JSX.Element => {
   return (
     <>
-      <div className="articleTitle component content">
+      <div className="articleTitle">
         <Text tag="h1" style={{ marginTop: '0' }} field={fields?.Title} />
         <div className="base sidePanel">
           <Image
