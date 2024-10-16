@@ -1,4 +1,4 @@
-import { TextField } from '@sitecore-jss/sitecore-jss-nextjs';
+import { TextField, useSitecoreContext } from '@sitecore-jss/sitecore-jss-nextjs';
 import Link from 'next/link';
 import React from 'react';
 
@@ -33,17 +33,27 @@ export type HeaderProps = {
 
 export const Default = (props: HeaderProps): JSX.Element => {
   const datasource = props.fields?.data?.datasource;
+  const { sitecoreContext } = useSitecoreContext();
+  const isPageEditing = sitecoreContext.pageEditing;
+  const siteQueryString = '?sc_site=Sports+Site';
 
   return (
     <nav className="topHeader" data-hook="header">
       <div className="kkVDHC idiolS csfUtv bdkrEV">
         <div className="sm-hide bPXQyn">
-          <Link className="fpwFGm exwrrA" href={datasource.url.path}>
+          <Link
+            className="fpwFGm exwrrA"
+            href={isPageEditing ? datasource.url.path + siteQueryString : datasource.url.path}
+          >
             {datasource.field.title.value}
           </Link>
           {datasource.children.results.map((child: ResultsFieldLink, key: number) => (
             <>
-              <Link className="fpwFGm exwrrA" href={child.url.path} key={key}>
+              <Link
+                className="fpwFGm exwrrA"
+                href={isPageEditing ? datasource.url.path + siteQueryString : datasource.url.path}
+                key={key}
+              >
                 {child.field.title.value}
               </Link>
 
@@ -53,7 +63,9 @@ export const Default = (props: HeaderProps): JSX.Element => {
                     <Link
                       target="_self"
                       className="JUrCQ linkWrapper2"
-                      href={subChild.url.path}
+                      href={
+                        isPageEditing ? datasource.url.path + siteQueryString : datasource.url.path
+                      }
                       style={{ letterSpacing: '0.6' }}
                       prefix="\00ab\00a0"
                     >
