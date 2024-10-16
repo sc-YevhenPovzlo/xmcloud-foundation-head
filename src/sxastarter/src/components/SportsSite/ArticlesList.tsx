@@ -10,6 +10,7 @@ import {
 } from '@sitecore-jss/sitecore-jss-nextjs';
 import { FieldMetadata } from '@sitecore-jss/sitecore-jss/layout';
 import React from 'react';
+import NextLink from 'next/link';
 
 type Fields = {
   data: {
@@ -65,7 +66,7 @@ export const Default = (props: ArticlesListProps): JSX.Element => {
                   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                   // @ts-expect-error
                   field={article?.children?.results[0].children?.results[0]?.link.jsonValue}
-                  style={{ letterSpacing: '0.6' }}
+                  style={{ textDecoration: 'none' }}
                 >
                   {article.children?.results[0].children?.results[0]?.title.value}
                 </Link>
@@ -86,10 +87,13 @@ export const Default = (props: ArticlesListProps): JSX.Element => {
               </p>
             </div>
             <div className="epfCUd sidePanel">
-              <a
+              <NextLink
                 className="linkWrapper2"
-                href="@LinkManager.GetItemUrl(Model)"
-                letter-spacing="0.6"
+                href={
+                  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                  // @ts-expect-error
+                  article?.children?.results[0].children?.results[0]?.link?.jsonValue?.value?.href
+                }
               >
                 <picture is="lazy-picture">
                   <Image
@@ -100,7 +104,7 @@ export const Default = (props: ArticlesListProps): JSX.Element => {
                     field={article?.children?.results[0].children?.results[0]?.image.jsonValue}
                   ></Image>
                 </picture>
-              </a>
+              </NextLink>
             </div>
           </div>
         ))}

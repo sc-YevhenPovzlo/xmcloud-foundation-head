@@ -51,7 +51,7 @@ export const Default = (props: HeaderProps): JSX.Element => {
             <>
               <Link
                 className="fpwFGm exwrrA"
-                href={isPageEditing ? datasource.url.path + siteQueryString : datasource.url.path}
+                href={isPageEditing ? child.url.path + siteQueryString : child.url.path}
                 key={key}
               >
                 {child.field.title.value}
@@ -63,9 +63,7 @@ export const Default = (props: HeaderProps): JSX.Element => {
                     <Link
                       target="_self"
                       className="JUrCQ linkWrapper2"
-                      href={
-                        isPageEditing ? datasource.url.path + siteQueryString : datasource.url.path
-                      }
+                      href={isPageEditing ? subChild.url.path + siteQueryString : subChild.url.path}
                       style={{ letterSpacing: '0.6' }}
                       prefix="\00ab\00a0"
                     >
