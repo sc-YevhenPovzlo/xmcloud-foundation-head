@@ -34,7 +34,7 @@ export type HeaderProps = {
 export const Default = (props: HeaderProps): JSX.Element => {
   const datasource = props.fields?.data?.datasource;
   const { sitecoreContext } = useSitecoreContext();
-  const isPageEditing = sitecoreContext.pageEditing;
+  const isPageEditing = sitecoreContext.pageState !== 'normal';
   const siteQueryString = '?sc_site=Sports+Site';
 
   return (
