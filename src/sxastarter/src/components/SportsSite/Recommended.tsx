@@ -10,7 +10,7 @@ type Record = {
 };
 
 type Fields = {
-  Recommended: Record[];
+  items: Record[];
 };
 
 type RecordsListProps = {
@@ -20,30 +20,34 @@ type RecordsListProps = {
 
 export const Default = (props: RecordsListProps): JSX.Element => {
   return (
-    <div className="articleTitle">
-      <h4 className="recordsTitle">Recommended</h4>
-      {props.fields?.Recommended?.map((recommended, key) => (
-        <div className="recordWrapper" key={key}>
-          <Link
-            className="linkWrapper1 linkWrapper2"
-            field={recommended.fields?.Link}
-            style={{ letterSpacing: '0.6' }}
-          >
-            <div className="p2 fPTthd">
-              <Text
-                tag="p"
-                className="recordWrapperTitle recordWrapperTitle1"
-                field={recommended.fields?.Title}
-              />
+    <>
+      {props.fields?.items?.length > 0 && (
+        <div className="articleTitle">
+          <h4 className="recordsTitle">Recommended</h4>
+          {props.fields?.items?.map((item, key) => (
+            <div className="recordWrapper" key={key}>
+              <Link
+                className="linkWrapper1 linkWrapper2"
+                field={item.fields?.Link}
+                style={{ letterSpacing: '0.6' }}
+              >
+                <div className="p2 fPTthd">
+                  <Text
+                    tag="p"
+                    className="recordWrapperTitle recordWrapperTitle1"
+                    field={item.fields?.Title}
+                  />
+                </div>
+                <Image
+                  className="recordImage1 recordImage2"
+                  tag="div"
+                  field={item.fields?.Image}
+                ></Image>
+              </Link>
             </div>
-            <Image
-              className="recordImage1 recordImage2"
-              tag="div"
-              field={recommended.fields?.Image}
-            ></Image>
-          </Link>
+          ))}
         </div>
-      ))}
-    </div>
+      )}
+    </>
   );
 };
