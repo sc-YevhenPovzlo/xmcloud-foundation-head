@@ -4,7 +4,7 @@
         <system.webServer>
             <httpProtocol>
                 <customHeaders>
-                    <add xdt:Transform="SetAttributes" xdt:Locator="Match(name)" name="Content-Security-Policy" value=""default-src 'self' 'unsafe-inline' 'unsafe-eval' https://apps.sitecore.net; img-src 'self' data https://content-hub-urldelivery.stylelabs.cloud/ https://contenthub-qa.velux.com/; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com; upgrade-insecure-requests; block-all-mixed-content; child-src 'self' https://content-hub-urldelivery.stylelabs.cloud/ https://contenthub-qa.velux.com/; connect-src 'self' https://content-hub-urldelivery.stylelabs.cloud/ https://contenthub-qa.velux.com/; media-src https://content-hub-urldelivery.stylelabs.cloud/ https://contenthub-qa.velux.com/;""/>
+                    <add xdt:Transform="SetAttributes" xdt:Locator="Match(name)" name="Content-Security-Policy" value="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://apps.sitecore.net; img-src 'self' data https://content-hub-urldelivery.stylelabs.cloud/ https://contenthub-qa.velux.com/; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com; upgrade-insecure-requests; block-all-mixed-content; child-src 'self' https://content-hub-urldelivery.stylelabs.cloud/ https://contenthub-qa.velux.com/; connect-src 'self' https://content-hub-urldelivery.stylelabs.cloud/ https://contenthub-qa.velux.com/; media-src https://content-hub-urldelivery.stylelabs.cloud/ https://contenthub-qa.velux.com/;"/>
                 </customHeaders>
             </httpProtocol>
         </system.webServer>
