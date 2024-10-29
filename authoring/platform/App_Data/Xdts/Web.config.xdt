@@ -1,8 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
-    <system.webServer>
-      <modules xdt:Transform="InsertIfMissing">
-        <add type="Sitecore.Support.NonceCookieTrackerHttpModule, NonceCookieTracker" name="NonceCookieTrackerHttpModule" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing"/>
-      </modules>
-    </system.webServer>
+    <location path="sitecore">
+        <system.webServer>
+            <httpProtocol>
+                <customHeaders>
+                    <add xdt:Transform="SetAttributes" xdt:Locator="Match(name)" name="Content-Security-Policy" value=""default-src 'self' 'unsafe-inline' 'unsafe-eval' https://apps.sitecore.net; img-src 'self' data https://content-hub-urldelivery.stylelabs.cloud/ https://contenthub-qa.velux.com/; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com; upgrade-insecure-requests; block-all-mixed-content; child-src 'self' https://content-hub-urldelivery.stylelabs.cloud/ https://contenthub-qa.velux.com/; connect-src 'self' https://content-hub-urldelivery.stylelabs.cloud/ https://contenthub-qa.velux.com/; media-src https://content-hub-urldelivery.stylelabs.cloud/ https://contenthub-qa.velux.com/;""/>
+                </customHeaders>
+            </httpProtocol>
+        </system.webServer>
+    </location>
 </configuration>
