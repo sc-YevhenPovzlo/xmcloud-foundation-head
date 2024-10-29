@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
     <system.webServer>
-      <modules runAllManagedModulesForAllRequests="true">
+      <modules xdt:Transform="InsertIfMissing">
         <add type="Sitecore.Support.NonceCookieTrackerHttpModule, NonceCookieTracker" name="NonceCookieTrackerHttpModule" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing"/>
       </modules>
     </system.webServer>
