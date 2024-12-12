@@ -1,8 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
-    <system.webServer>
-        <modules>
-            <add type="Sitecore.Support.NonceCookieTrackerHttpModule, NonceCookieTracker" name="NonceCookieTrackerHttpModule" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing"/>
-        </modules>
-    </system.webServer>
+    <location path="sitecore">
+        <system.webServer>
+            <httpProtocol>
+                <customHeaders>
+                    <add xdt:Transform="SetAttributes" xdt:Locator="Match(name)" name="Content-Security-Policy" value="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://apps.sitecore.net; img-src 'self' data https://yurp-nov15.sitecoresandbox.cloud/;style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com; upgrade-insecure-requests; block-all-mixed-content; child-src 'self' https://yurp-nov15.sitecoresandbox.cloud/; connect-src 'self' https://yurp-nov15.sitecoresandbox.cloud/; media-src https://yurp-nov15.sitecoresandbox.cloud/;"/>
+                </customHeaders>
+            </httpProtocol>
+        </system.webServer>
+    </location>
 </configuration>
