@@ -4,7 +4,7 @@
         <system.webServer>
             <httpProtocol>
                 <customHeaders>
-                    <add xdt:Transform="SetAttributes" xdt:Locator="Match(name)" name="Content-Security-Policy" value="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://apps.sitecore.net; img-src 'self' data https://yurp-nov15.sitecoresandbox.cloud/;style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com; upgrade-insecure-requests; block-all-mixed-content; child-src 'self' https://yurp-nov15.sitecoresandbox.cloud/; connect-src 'self' https://yurp-nov15.sitecoresandbox.cloud/; media-src https://yurp-nov15.sitecoresandbox.cloud/;"/>
+                    <add xdt:Transform="SetAttributes" xdt:Locator="Match(name)" name="Content-Security-Policy" value="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://apps.sitecore.net; img-src 'self' data https://ava-q-001.sitecorecontenthub.cloud/;style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com; upgrade-insecure-requests; block-all-mixed-content; child-src 'self' https://ava-q-001.sitecorecontenthub.cloud/; media-src https://ava-q-001.sitecorecontenthub.cloud/;"/>
                 </customHeaders>
             </httpProtocol>
         </system.webServer>
